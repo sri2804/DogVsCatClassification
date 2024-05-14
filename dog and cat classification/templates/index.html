@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #8b8b2a;
+      font-family: 'Arial', sans-serif;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 75%;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      position: relative;
+      margin-top: 50px;
+    }
+
+    .background-image {
+      background: url('static/images/1.jpeg') center/cover no-repeat;
+      height: 500px; /* Adjust the height as needed */
+      border-radius: 15px 15px 0 0; /* Rounded corners only at the top */
+      position: relative;
+      opacity: 0.9; /* Adjust the opacity as needed */
+      width: 100%; /* Make the image occupy the whole width */
+    }
+
+    .overlay-text {
+      position:absolute;
+      top: 85%; /* Adjust the vertical position */
+      left: 35%; /* Adjust the horizontal position */
+      transform: translate(-50%, -50%); /* Center the text */
+      
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: red; /* Set the color of the specific part to red */
+    }
+
+    .navbar {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar li {
+      margin-right: 20px;
+    }
+
+    .navbar li:last-child {
+      margin-right: 0;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #80C7C7; /* Change color on hover */
+    }
+
+    .description-blocks {
+      display: flex;
+      justify-content: space-between;
+      margin-top:-10px; /* Adjust the value as needed */
+    }
+
+    .description-block {
+      flex: 1;
+      margin: 0 10px;
+      padding: 20px;
+      background-color: rgba(1, 1, 1, 0.8); /* Darker shade with transparency */
+      border-radius: 10px;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+    #drop-area {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      font-size: 18px;
+    }
+    #drop-area.highlight {
+      border-color: #80C7C7;
+    }
+    
+
+    @media only screen and (max-width: 768px) {
+      .container {
+        max-width: 90%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar li {
+        margin: 10px 0;
+      }
+
+      .background-image {
+        height: 200px; /* Adjust the height as needed for smaller screens */
+      }
+
+      .description-blocks {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+      }
+
+      .description-block {
+        margin-top: 20px;
+      }
+      .description-block h2 {
+       color:red;
+      }
+    }
+    form {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="file"] {
+      display: none; /* Hide the default file input */
+    }
+
+    .custom-file-input {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff7f50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .custom-file-input:hover {
+      background-color: #ff6347;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      font-weight:bold;
+    }
+    .uploaded-image {
+      width: 300px; /* Set the fixed width */
+      height: 300px; /* Set the fixed height */
+      display: block; /* Ensure it behaves like a block element */
+      margin: 0 auto; /* Center the image horizontally */
+      border-radius: 10px; /* Add border radius for rounded corners */
+      margin-top: 20px; /* Add margin for spacing */
+    }
+    .about-section {
+      background-color: rgba(1, 1, 1, 0.8);
+      border-radius: 10px;
+      margin-top: 20px; /* Adjust margin as needed */
+      padding: 20px;
+    }
+
+    .about-section h2 {
+      color: red; /* Adjust heading color as needed */
+    }
+
+    .about-section p {
+      color: #fff; /* Adjust text color as needed */
+    }
+  </style>
+  <title>Your Website</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="background-image">
+      <div class="overlay-text">
+        <h1>Categorise your images into cats and dogs in one Go!!</h1>
+      </div>
+      <nav>
+        <div class="logo">Felidae<span>&Canidae</span></div>
+        <ul class="navbar">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="description-blocks">
+      <div class="description-block">
+        <h2 style="color:red;">Upload Image</h2>
+        <p>Drop an image in the dropdown box</p>
+      </div>
+
+      <div class="description-block">
+        <h2 style="color:red;">Single Click</h2>
+        <p>Make Prediction of an image</p>
+      </div>
+
+      <div class="description-block">
+        <h2 style="color:red;">View Result</h2>
+        <p>Get the classification</p>
+      </div>
+    </div>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="file" class="custom-file-input">Select an image file</label>
+      <input type="file" id="file" name="file" accept="image/*">
+      <button type="submit">Upload</button>
+    </form>
+
+    <!-- Display the uploaded image -->
+    {% if classification %}
+      <img src="{{ url_for('static', filename='temp.jpg') }}" class="uploaded-image" alt="Uploaded Image">
+    {% endif %}
+
+    <!-- Display classification result -->
+    {% if classification %}
+      <p class="message">Classification result: {{ classification }}</p>
+      {% if classification == 'Dog' %}
+        <p>Woof!! It's a Dog🐶</p>
+      {% else %}
+        <p>Meoww!! It's a Cat😺</p>
+      {% endif %}
+    {% endif %}
+  
+    <div class="about-section">
+      <h2>About Us</h2>
+      <p>Felidae<span style="color:red">&Canidae</span> is a webapp that deploys Convolutional Neural Network to classify between Cats and Dogs.The model has been trained over exisiting dataset and the prediction is at its atmost accuracy.</p>
+    </div>
+ 
+</body>
+</html>
